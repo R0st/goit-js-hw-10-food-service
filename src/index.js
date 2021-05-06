@@ -1,5 +1,5 @@
 import menuTmp from './templates/menu.hbs';
-import menuTmpOne from './templates/menuOne.hbs';
+// import menuTmpOne from './templates/menuOne.hbs';
 import menuTmpData from './menu.json';
 
 import './styles.css';
@@ -20,6 +20,10 @@ const checkboxEl = document.querySelector('.theme-switch__toggle');
 
 const savedTheme = localStorage.getItem('theme');
 bodyTheme.classList = savedTheme;
+
+if (savedTheme === null) {
+    localStorage.setItem('theme', Theme.LIGHT);
+};
 if (savedTheme === Theme.DARK) {
         checkboxEl.checked = true;
     }
