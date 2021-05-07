@@ -23,11 +23,11 @@ bodyTheme.classList = savedTheme;
 
 if (savedTheme === null) {
     localStorage.setItem('theme', Theme.LIGHT);
+    bodyTheme.classList = localStorage.getItem('theme');
 };
 if (savedTheme === Theme.DARK) {
         checkboxEl.checked = true;
     }
-
 
 checkboxEl.addEventListener('change', onInputChangeTheme);
 
